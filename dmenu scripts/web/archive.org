@@ -1,0 +1,3 @@
+#! /usr/bin/env sh
+
+cd | dmenu -p "Search wayback machine:" | xargs -I {} open "https://web.archive.org/web/*/"{}""

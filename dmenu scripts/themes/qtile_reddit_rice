@@ -1,0 +1,18 @@
+#! /usr/bin/env sh
+
+# remove current sketchybar config
+rm -r ~/.config/sketchybar
+
+# move desired sketchybar config to the correct location
+cp -r ~/dmenu\ scripts/themes/.sketchybar-qtile-_reddit ~/.config/sketchybar
+cp -r ~/dmenu\ scripts/themes/.yabai_qtile-reddit_rice ~/.config/yabai/yabairc
+
+# restart sketchybar to apply new config
+brew services restart sketchybar
+
+# restart yabai
+brew services restart yabai
+
+echo 3 > /Users/itaysharir/dmenu\ scripts/themes/.current
+
+wal -i /Users/itaysharir/wallpapers/bspwm-rice/arch-magenta-blue-1920x1080.png
