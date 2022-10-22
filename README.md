@@ -62,7 +62,7 @@ cmd + shift - m : open -a XQuartz && skhd -k "cmd - a"          # Wallpaper
 ## My build of dmenu
 If you dont want to compile dmenu yourself, you can grab my version of dmenu. <br>
 My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it:
-- Make sure you have cloned the repository and that ity is the active directory in the terminal.
+- Make sure you have cloned the repository and that it is the active directory in the terminal.
 - Run the commannd ```sudo make install```
 Now, if you added keyblindings to open dmenu and the scripts - you should be able to open dmenu with ```cmd + shift + return```
 
