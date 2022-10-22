@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+export currentwall
+currentwall=$(osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)')
+
+if [[ $(cat ~/dmenu\ scripts/themes/.current) == 1 ]]; then
+	sed -i '' -e '$ d' ~/dmenu\ scripts/themes/Xmonad
+	echo wal -i $currentwall >> ~/dmenu\ scripts/themes/Xmonad
+fi
+
+if [[ $(cat ~/dmenu\ scripts/themes/.current) == 2 ]]; then
+	sed -i '' -e '$ d' ~/dmenu\ scripts/themes/Qtile
+	echo wal -i $currentwall >> ~/dmenu\ scripts/themes/Qtile
+fi
+
+if [[ $(cat ~/dmenu\ scripts/themes/.current) == 3 ]]; then
+	sed -i '' -e '$ d' ~/dmenu\ scripts/themes/qtile_reddit_rice
+	echo wal -i $currentwall >> ~/dmenu\ scripts/themes/qtile_reddit_rice
+fi
