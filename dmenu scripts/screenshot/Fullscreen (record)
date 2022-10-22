@@ -1,3 +1,0 @@
-#! /usr/bin/env sh
-
-skhd -k "cmd + shift - 5"
