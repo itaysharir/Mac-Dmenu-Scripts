@@ -13,9 +13,10 @@ To use the second script that switches between rices, you need to install:
 - pywal - Install with [these instructions](https://github.com/dylanaraps/pywal/issues/515#issuecomment-616040266)
 
 ### Add keyblindings
-- Install skhd - a tool that allows you to assign commands to keyblindings ```brew install koekeishiya/formulae/skhd```
+- Install skhd - a tool that allows you to assign commands to keyblindings ```brew install koekeishiya/formulae/skhd``` <br>
 - Add the following to your skhd config:
-``` ### Various dmenu scripts ###
+```
+### Various dmenu scripts ###
 # Note: Some things are configured in XQuartz, this wont work out of the box
 cmd + shift - return : open -a Xquartz && skhd -k "cmd - n"     # App launcher
 cmd + shift - t : open -a Xquartz && skhd -k "cmd - t"          # Bar changer
@@ -26,8 +27,8 @@ cmd + shift - e : open -a XQuartz && skhd -k "cmd - f"          # Edit conigs
 cmd + shift - d : open -a XQuartz && skhd -k "cmd - d"          # Todo
 cmd + shift - m : open -a XQuartz && skhd -k "cmd - a"          # Wallpaper 
 ```
-- Make sure Xquartz is installed. If not, install it with homebrew: ```brew install xquartz```
-- Open Xquartz. In the menu bar go to Applications < Customize...
+- Make sure Xquartz is installed. If not, install it with homebrew: ```brew install xquartz``` <br>
+- Open Xquartz. In the menu bar go to Applications < Customize... <br>
 - On the window that opened, add the following items:
 ```
 +---------------------------------------------------------------------+----------+
@@ -61,9 +62,9 @@ cmd + shift - m : open -a XQuartz && skhd -k "cmd - a"          # Wallpaper
 
 ## My build of dmenu
 If you dont want to compile dmenu yourself, you can grab my version of dmenu. <br>
-My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it:
-- Make sure you have cloned the repository and that it is the active directory in the terminal.
-- Run the commannd ```sudo make install```
+My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it: <br>
+- Make sure you have cloned the repository and that it is the active directory in the terminal. <br>
+- Run the commannd ```sudo make install``` <br>
 Now, if you added keyblindings to open dmenu and the scripts - you should be able to open dmenu with ```cmd + shift + return```
 
 ## Installation of dmenu
@@ -71,9 +72,9 @@ Now, if you added keyblindings to open dmenu and the scripts - you should be abl
 Clone the dmenu repo with the following command: <br>
 ```wget https://dl.suckless.org/tools/dmenu-4.9.tar.gz && cd dmenu-4.9```
 
-### Modify config.mk (Important! dmenu will not build otherwise)
-- Delete all contents of config.mk
-- Paste the following in config.mk:
+### Modify config.mk (Important! dmenu will not build otherwise) <br>
+- Delete all contents of config.mk <br>
+- Paste the following in config.mk: <br>
 ```
 # dmenu version
 VERSION = 4.9
@@ -107,5 +108,5 @@ LDFLAGS  = $(LIBS)
 # compiler and linker
 CC = cc
 ```
-- Make sure you are in the ```dmenu-4.9``` directory, and run ```sudo make install```
+- Make sure you are in the ```dmenu-4.9``` directory, and run ```sudo make install``` <br>
 Now, if you added keyblindings to open dmenu and the scripts - you should be able to open dmenu with ```cmd + shift + return```
