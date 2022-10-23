@@ -64,13 +64,13 @@ cmd + shift - m : open -a XQuartz && skhd -k "cmd - a"          # Wallpaper
 ```
 
 ## My build of dmenu
-If you dont want to compile dmenu yourself, you can grab my version of dmenu. <br>
+If you dont want to patch dmenu yourself, you can grab my already patched version of dmenu. <br>
 My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it: <br>
 - Make sure you have cloned the repository and that it is the active directory in the terminal. <br>
 - Run the commannd ```sudo make install``` <br>
 Now, if you added keyblindings to open dmenu and the scripts - you should be able to open dmenu with ```cmd + shift + return```
 
-## Installation of dmenu
+## Build dmenu yourself
 ### Clone the dmenu repo
 Clone the dmenu repo with the following command: <br>
 ```wget https://dl.suckless.org/tools/dmenu-4.9.tar.gz && cd dmenu-4.9```
