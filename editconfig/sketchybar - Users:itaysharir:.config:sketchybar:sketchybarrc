@@ -1,3 +1,0 @@
-#! /usr/bin/env zsh
-
-emacsclient -c ~/.config/sketchybar/sketchybarrc
