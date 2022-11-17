@@ -7,13 +7,15 @@
 ### Clone this repository
 Clone this repo with the following command: <br>
 ```git clone https://github.com/itaysharir/Mac-Dmenu-Scripts.git ~/dmenu\ scripts```
-### Quick Note (DO NOT FOLLOW IF YOU DON'T WANT TO USE THE FOLLOWING SCRIPTS) ###
+### Quick Note ###
 To use the ```themes``` script, you need:
 - sketchybar ```brew tap FelixKratz/formulae && brew install sketchybar```
 - yabai ```brew install koekeishiya/formulae/yabai```
 - alactitty ```brew install alacritty```
+
 To use the ```wallpaper``` script, you need:
 - pywal (fork) ```git clone https://github.com/robwaz/pywal && cd pywal && sudo pip3 install -e ./```
+
 To use the ```editconfig``` script, you need:
 - emacs | there are multiple ways to install emacs on macOS, look it up.
 
