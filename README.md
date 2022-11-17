@@ -7,9 +7,6 @@
 ### Clone this repository
 Clone this repo with the following command: <br>
 ```git clone https://github.com/itaysharir/Mac-Dmenu-Scripts.git ~/dmenu\ scripts```
-### IMPORTANT! unzip this file
-- Unzip wallpaper/app.app.zip
-
 ### Quick Note ###
 To use the second script that switches between rices, you need to install:
 - sketchybar ```brew tap FelixKratz/formulae && brew install sketchybar```
