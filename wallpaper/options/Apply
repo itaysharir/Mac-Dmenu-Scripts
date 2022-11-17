@@ -17,3 +17,9 @@ if [[ $(cat ~/dmenu\ scripts/themes/.current) == 3 ]]; then
 	sed -i '' -e '$ d' ~/dmenu\ scripts/themes/qtile_reddit_rice
 	echo wal -i $currentwall >> ~/dmenu\ scripts/themes/qtile_reddit_rice
 fi
+
+if [[ $(cat ~/dmenu\ scripts/themes/.current) == 4 ]]; then
+	sed -i '' -e '$ d' ~/dmenu\ scripts/themes/Palenight
+	echo wal -i $currentwall >> ~/dmenu\ scripts/themes/Palenight
+
+fi

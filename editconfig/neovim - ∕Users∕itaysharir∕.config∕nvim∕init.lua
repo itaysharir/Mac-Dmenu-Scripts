@@ -1,3 +1,3 @@
 #! /usr/bin/env zsh
 
-emacsclient -c ~/.config/nvim/init.lua
+emacsclient -c ~/.config/nvim/init.vim

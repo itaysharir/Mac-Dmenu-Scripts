@@ -1,0 +1,5 @@
+#! /usr/bin/env sh
+
+cd ~/wallpapers/dt/
+export lastwall=$(sed 'x;$!d' <~/dmenu\ scripts/wallpaper/.wallpaper_history)
+wal -i "$lastwall"

@@ -1,0 +1,211 @@
+#!/usr/bin/env sh
+#  ___
+# |_ _| |_ __ _ _   _
+#  | || __/ _` | | | |  github: https://github.com/itaysharir
+#  | || || (_| | |_| |  reddit: u/visible-pop-2576
+# |___|\__\__,_|\__, |  dotfiles: https://github.com/itaysharir/Dotfiles
+#               |___/
+
+### Load colors and icons ###
+. "$HOME/.config/sketchybar/colors.sh"  # Loads all defined colors
+. "$HOME/.config/sketchybar/icons.sh"   # Loads all defined icons
+
+### Store plugin and item directories in variables ###
+ITEM_DIR="$HOME/.config/sketchybar/items"       # Directory where the items are configured
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"   # Directory where all the plugin scripts are stored
+
+### Define space click script ###
+export SPACE_CLICK_SCRIPT="yabai -m space --focus \$SID 2>/dev/null"
+
+### Define defult font ###
+FONT="Ubuntu" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+
+### Padding ###
+PADDINGS=3          # All elements use this padidng (Wherever i didn't need it, I used negetive padding)
+SEGMENT_SPACING=13  # The spacing between segments
+
+### Setting up the general bar appearance and default values ###
+sketchybar --bar     height=37                                                     \
+                     border_width=0                                                \
+                     margin=12                                                     \
+                     y_offset=13                                                   \
+                     blur_radius=0                                                 \
+                     shadow=on                                                     \
+                     corner_radius=12                                              \
+                     position=top                                                  \
+                     padding_left=4                                                \
+                     padding_right=4                                               \
+                     color=0xff1e1e2e                                              \
+                     topmost=off                                                   \
+                     sticky=on                                                     \
+                     font_smoothing=off                                            \
+                     notch_width=0                                                 \
+                                                                                   \
+           --default drawing=on                                                    \
+                     updates=when_shown                                            \
+                     label.font="FONT:Bold:13.0"                                   \
+                     icon.font="$FONT:Bold:14.0"                                   \
+                     icon.color=$ICON_COLOR                                        \
+                     label.color=$LABEL_COLOR                                      \
+                     icon.padding_left=$PADDINGS                                   \
+                     icon.padding_right=$PADDINGS                                  \
+                     label.padding_left=$PADDINGS                                  \
+                     label.padding_right=$PADDINGS                                 \
+                     background.padding_right=$PADDINGS                            \
+                     background.padding_left=$PADDINGS                             \
+
+### Template for some elements ###
+sketchybar --add item           label_template left                                \
+           --set label_template icon.drawing=off                                   \
+                                label.font="$FONT:Black:12.0"                      \
+                                label.padding_right=5                              \
+                                click_script="$PLUGIN_DIR/toggle_bracket.sh"       \
+                                background.padding_left=$SEGMENT_SPACING           \
+                                drawing=off                                        \
+
+### Menu system ###
+sketchybar --add       item               arch left                                       \
+           --set       arch               background.image=/Users/itaysharir/.config/sketchybar/assets/menu\ system.png \
+                                          background.image.scale=0.03                            \
+                                          background.drawing=on                                 \
+                                          background.padding_right=4                            \
+                                          background.padding_left=7                             \
+                                          click_script="$PLUGIN_DIR/dmenu.sh"
+
+### First Seperator on the bar ###
+sketchybar --add       item               seperator1 left                                       \
+           --set       seperator1              background.image=/Users/itaysharir/.config/sketchybar/assets/seperator.png \
+                                          background.image.scale=0.1                            \
+                                          background.drawing=on                                 \
+                                          background.padding_right=4                            \
+                                          background.padding_left=7                             \
+
+### Spaces themselves are this ###
+. "$ITEM_DIR/spaces.sh"
+
+### First Seperator on the bar ###
+sketchybar --add       item               seperator2 left                                       \
+           --set       seperator2              background.image=/Users/itaysharir/.config/sketchybar/assets/seperator.png \
+                                          background.image.scale=0.1                            \
+                                          background.drawing=on                                 \
+                                          background.padding_right=4                            \
+                                          background.padding_left=10                             \
+
+sketchybar --add item vol left                                                  \
+           --set vol   update_freq=1                                               \
+                       icon.padding_left=13                                        \
+                       icon.font="Font Awesome 6 Free:Solid:12.4"                  \
+                       icon.color=0xff000000                                       \
+                       label.font="SauceCodePro Nerd Font Mono:Medium:13.5"                                \
+                       label.color=0xff000000                                      \
+                       label.padding_right=30                                       \
+                       icon.padding_right=8                                       \
+                       background.color=0xfff5c2e7                                 \
+                       background.corner_radius=10                                  \
+                       background.height=24                                         \
+                       script="$PLUGIN_DIR/sound.sh"                               \
+                       shadow.drawing=off                                           \
+
+sketchybar --add item updates left                                                  \
+           --set updates   update_freq=3200                                               \
+                       icon.font="Font Awesome 6 Free:Solid:14.0"                  \
+                       icon=""                                                     \
+                       icon.color=0xff000000                                       \
+                       label.font="SauceCodePro Nerd Font Mono:Medium:13.5"                                \
+                       label.color=0xff000000                                      \
+                       label.padding_right=18                                       \
+                       icon.padding_left=20                                       \
+                       background.color=0xfff38ba7                                 \
+                       background.corner_radius=10                                  \
+                       background.height=24                                         \
+                       background.padding_left=-20                                   \
+                       script="$PLUGIN_DIR/package_monitor.sh"                               \
+                       shadow.drawing=off                                           \
+
+# Curent procces name
+sketchybar --add       event        window_focus                                   \
+           --add       event        title_change                                   \
+           --add       item         window_title center                              \
+           --set       window_title script="$PLUGIN_DIR/window_title.sh"           \
+                                    label.font="Ubuntu:Bold:13.5"                                \
+                                    label.color=0xffc9d0ef                         \
+           --subscribe window_title window_focus title_change                      \
+
+### Time Widget ###
+sketchybar --add item clock right                                                  \
+           --set clock   update_freq=1                                               \
+                       icon.font="Font Awesome 6 Free:Solid:14.0"                  \
+                       icon=""                                                     \
+                       icon.color=0xff000000                                       \
+                       label.font="SauceCodePro Nerd Font Mono:Medium:13.5"                                \
+                       label.color=0xff000000                                      \
+                       label.padding_right=18                                       \
+                       icon.padding_left=10                                       \
+                       background.color=0xfff5c2e7                                 \
+                       background.corner_radius=10                                  \
+                       background.height=24                                         \
+                       background.padding_left=-9.5                                   \
+                       script="$PLUGIN_DIR/clock.sh"                               \
+                       shadow.drawing=off                                           \
+
+### First Seperator on the bar ###
+sketchybar --add       item               seperator3 right                                       \
+           --set       seperator3              background.image=/Users/itaysharir/.config/sketchybar/assets/seperator.png \
+                                          background.image.scale=0.1                            \
+                                          background.drawing=on                                 \
+                                          background.padding_right=10                            \
+                                          background.padding_left=8                             \
+
+### Battery Widget ###
+sketchybar --add item battery right                                                  \
+           --set battery   update_freq=1                                               \
+                       icon.font="Font Awesome 6 Free:Solid:14.0"                  \
+                       icon=""                                                     \
+                       icon.color=0xff000000                                       \
+                       label.font="SauceCodePro Nerd Font Mono:Medium:13.5"                                \
+                       label.color=0xff000000                                      \
+                       label.padding_right=18                                       \
+                       icon.padding_left=25                                       \
+                       background.color=0xff94e2d5                                 \
+                       background.corner_radius=10                                  \
+                       background.height=24                                         \
+                       script="$PLUGIN_DIR/battery.sh"                               \
+                       shadow.drawing=off                                           \
+
+### mem Widget ###
+sketchybar --add item ssd right                                                  \
+           --set ssd   update_freq=1                                               \
+                       icon.font="Font Awesome 6 Free:Solid:14.0"                  \
+                       icon.color=0xff000000                                       \
+                       label.font="SauceCodePro Nerd Font Mono:Medium:13.5"                                \
+                       label.color=0xff000000                                      \
+                       label.padding_right=18                                       \
+                       icon.padding_left=25                                       \
+                       background.color=0xfff9e2af                                 \
+                       background.corner_radius=10                                  \
+                       background.padding_right=-20                                      \
+                       background.height=24                                         \
+                       script="$PLUGIN_DIR/mem.sh"                               \
+                       shadow.drawing=off                                           \
+
+### cpu Widget ###
+sketchybar --add item cpu right                                                  \
+           --set cpu   update_freq=1                                               \
+                       icon.font="Font Awesome 6 Free:Solid:14.0"                  \
+                       icon.color=0xff000000                                       \
+                       label.font="SauceCodePro Nerd Font Mono:Medium:13.5"                                \
+                       label.color=0xff000000                                      \
+                       label.padding_right=18                                       \
+                       icon.padding_left=15                                       \
+                       background.color=0xffa6e3a1                                 \
+                       background.corner_radius=10                                  \
+                       background.padding_right=-20                                      \
+                       background.height=24                                         \
+                       script="$PLUGIN_DIR/cpu.sh"                               \
+                       shadow.drawing=off                                           \
+
+### If an update is avalible, update sketchybar when launched ##
+sketchybar --update
+
+### Notify when sketchybarrc is finished loading ##
+echo "sketchybar configuation loaded.."

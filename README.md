@@ -20,55 +20,25 @@ To use the second script that switches between rices, you need to install:
 - Add the following to your skhd config:
 ```
 ### Various dmenu scripts ###
-# Note: Some things are configured in XQuartz, this wont work out of the box
-cmd + shift - return : open -a Xquartz && skhd -k "cmd - n"     # App launcher
-cmd + shift - t : open -a Xquartz && skhd -k "cmd - t"          # Bar changer
-cmd + shift - l : open -a XQuartz && skhd -k "cmd - p"          # Logout menu
-cmd + shift - r : open -a XQuartz && skhd -k "cmd - r"          # Screenshot menu
-cmd + shift - b : open -a XQuartz && skhd -k "cmd - o"          # Search engine script
-cmd + shift - e : open -a XQuartz && skhd -k "cmd - f"          # Edit conigs
-cmd + shift - d : open -a XQuartz && skhd -k "cmd - d"          # Todo
-cmd + shift - m : open -a XQuartz && skhd -k "cmd - a"          # Wallpaper 
+cmd + shift - return : /bin/bash -l -c "sh ~/dmenu\ scripts/apps/script.sh"      # App launcher
+cmd + shift - t : /bin/bash -l -c "sh ~/dmenu\ scripts/themes/.script.sh"        # Bar changer
+cmd + shift - l : /bin/bash -l -c "sh ~/dmenu\ scripts/logout/.script.sh"        # Logout menu
+cmd + shift - r : /bin/bash -l -c "sh ~/dmenu\ scripts/screenshot/.script.sh"    # Screenshot menu
+cmd + shift - b : /bin/bash -l -c "sh ~/dmenu\ scripts/web/.script.sh"           # Search engine script
+cmd + shift - e : /bin/bash -l -c "sh ~/dmenu\ scripts/editconfig/.script.sh"    # Edit conigs
+cmd + shift - d : /bin/bash -l -c "sh ~/dmenu\ scripts/todo/.script.sh"          # Todo
+cmd + shift - m : /bin/bash -l -c "sh ~/dmenu\ scripts/wallpaper/.script.sh"     # Wallpaper
 ```
-- Make sure Xquartz is installed. If not, install it with homebrew: ```brew install xquartz``` <br>
-- Open Xquartz. In the menu bar go to Applications < Customize... <br>
-- On the window that opened, add the following items:
-```
-+---------------------------------------------------------------------+----------+
-|    Name    |                        Command                         | Shortcut |
-+---------------------------------------------------------------------+----------+
-| dmenu      | ls -d /Applications/*.app /System/Applications/*.app   |          |
-|            | /Applications/Utilities/*.app | sed -r 's/^.+\///'     |          |
-|            | | rev | cut -c5- | rev | dmenu -i | xargs -I {}        |    n     |
-|            | open -a  "{}"                                          |          |
-|------------|--------------------------------------------------------|----------|
-| dmenu-bar  | cd ~/dmenu\ scripts/themes; ls | dmenu -i -l 20 -p     |    t     |
-|            | "Change Bar:"| xargs -I {} sh "{}"                     |          |
-|------------|--------------------------------------------------------|----------|
-| dmenu-shut | cd ~/dmenu\ scripts/logout; ls |  dmenu -i -l 20 -p    |    p     |
-|            | "Shutdown menu:"| xargs -I {} sh "{}"                  |          |
-|------------|--------------------------------------------------------|----------|
-| dmenu-shot | cd ~/dmenu\ scripts/screenshot; ls | dmenu -l 20 -p    |    r     |
-|            | "Take Screenshot of:"| xargs -I {} sh "{}"             |          |
-|------------|--------------------------------------------------------|----------|
-| dmenu-web  | cd ~/dmenu\ scripts/web; ls | dmenu -l 20 -p           |    o     |
-|            | "Choose search engine: "| xargs -I {} zsh "{}"         |          |
-+---------------------------------------------------------------------+----------+
-| dmenu-conf | cd ~/dmenu\ scripts/editconfig; ls | dmenu -l 20 -p    |    f     |
-|            | "Edit config:"| xargs -I {} zsh "{}"                   |          |
-+---------------------------------------------------------------------+----------+
-| dmenu-todo | cd ~/dmenu\ scripts/todo/; ./script                    |    d     |
-+---------------------------------------------------------------------+----------+
-| dmenu-wall | cd ~/dmenu\ scripts/wallpaper; ./script                |    d     |
-+---------------------------------------------------------------------+----------+
-```
-
+### Install dependencies
+- First of all, the obvious - Xquartz. Make sure it;s installed, if not install it with ```brew install xquartz```
+- Install macports following the instuctions [here](https://www.macports.org/install.php). Then, run ```sudo port install dmenu && sudo port uninstall dmenu```
+- (It make look pointless to install dmenu then uninstall it right away, but when installing dmenu all of the nececery dependencies are installed.)
 ## My build of dmenu
 If you dont want to patch dmenu yourself, you can grab my already patched version of dmenu. <br>
 My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it: <br>
 - Make sure you have cloned the repository and that it is the active directory in the terminal. <br>
 - Run the commannd ```sudo make install``` <br>
-Now, if you added keyblindings to open dmenu and the scripts - you should be able to open dmenu with ```cmd + shift + return```
+Now, if you added keyblindings to open dmenu and the scripts - you should be able to open the "run apps" dmenu script with ```cmd + shift + return```
 
 ## Build dmenu yourself
 ### Clone the dmenu repo
