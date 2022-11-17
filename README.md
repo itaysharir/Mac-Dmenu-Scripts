@@ -7,10 +7,15 @@
 ### Clone this repository
 Clone this repo with the following command: <br>
 ```git clone https://github.com/itaysharir/Mac-Dmenu-Scripts.git ~/dmenu\ scripts```
-### Quick Note ###
-To use the second script that switches between rices, you need to install:
+### Quick Note (DO NOT FOLLOW IF YOU DON'T WANT TO USE THE FOLLOWING SCRIPTS) ###
+To use the ```themes``` script, you need:
 - sketchybar ```brew tap FelixKratz/formulae && brew install sketchybar```
-- pywal - Install with [these instructions](https://github.com/dylanaraps/pywal/issues/515#issuecomment-616040266)
+- yabai ```brew install koekeishiya/formulae/yabai```
+- alactitty ```brew install alacritty```
+To use the ```wallpaper``` script, you need:
+- pywal (fork) ```git clone https://github.com/robwaz/pywal && cd pywal && sudo pip3 install -e ./```
+To use the ```editconfig``` script, you need:
+- emacs | there are multiple ways to install emacs on macOS, look it up.
 
 ### Add keyblindings
 - Install skhd - a tool that allows you to assign commands to keyblindings ```brew install koekeishiya/formulae/skhd``` <br>
