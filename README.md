@@ -1,13 +1,9 @@
-# macOS dmenu scripts
-- macOS compatible dmenu scripts
-- Instructions to running dmenu on macos
-- Patching dmenu on macOS
+# Introduction
+I have an M1 mac which i bought about 2 years ago when i basically knew nothing about computers. I want to switch to Asahi linux but it is missing some important featuers. One program i wanted to use on linux was dmenu. So in the meanwhile until i wait for Asahi, Here is my collection scrips.
+- Taken insporation from [distrotube's dmscripts](https://gitlab.com/dwt1/dmscripts)
+- Built for macOS, not linux.
 
-## Installation of dmenu scripts
-### Clone this repository
-Clone this repo with the following command: <br>
-```git clone https://github.com/itaysharir/Mac-Dmenu-Scripts.git ~/dmenu\ scripts```
-### Quick Note ###
+# Quick Note
 To use the ```themes``` script, you need:
 - sketchybar ```brew tap FelixKratz/formulae && brew install sketchybar```
 - yabai ```brew install koekeishiya/formulae/yabai```
@@ -23,6 +19,11 @@ To use the ```editconfig``` script, you need:
 - Install skhd - a tool that allows you to assign commands to keyblindings ```brew install koekeishiya/formulae/skhd``` <br>
 - Add the following to your skhd config:
 ```
+
+## Installation of dmenu scripts
+### Clone this repository
+Clone this repo with the following command: <br>
+```git clone https://github.com/itaysharir/Mac-Dmenu-Scripts.git ~/dmenu\ scripts```
 ### Various dmenu scripts ###
 cmd + shift - return : /bin/bash -l -c "sh ~/dmenu\ scripts/apps/script.sh"      # App launcher
 cmd + shift - t : /bin/bash -l -c "sh ~/dmenu\ scripts/themes/.script.sh"        # Bar changer
