@@ -1,5 +1,5 @@
 # Introduction
-I have an M1 mac which i bought about 2 years ago when i basically knew nothing about computers. I want to switch to Asahi linux but it is missing some important featuers. One program i wanted to use on linux was dmenu. So in the meanwhile until i wait for Asahi, Here is my collection scrips.
+I have an M1 mac which i bought about 2 years ago when i basically knew nothing about computers. I want to switch to Asahi linux but it is missing some important featuers. One program i wanted to use on linux was dmenu. So in the meanwhile until i wait for Asahi, Here is my collection of dmenu scrips.
 - Taken insporation from [distrotube's dmscripts](https://gitlab.com/dwt1/dmscripts)
 - Built for macOS, not linux.
 
