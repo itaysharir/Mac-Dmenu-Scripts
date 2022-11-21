@@ -36,7 +36,8 @@ cmd + shift - m : /bin/bash -l -c "sh ~/dmenu\ scripts/wallpaper/.script.sh"    
 ```
 ### Install dependencies
 - First of all, the obvious - Xquartz. Make sure it;s installed, if not install it with ```brew install xquartz```
-- Install macports following the instuctions [here](https://www.macports.org/install.php). Then, run ```sudo port install freetype Xft2 xorg-libXinerama``` to install dependencies
+- Install macports following the instuctions [here](https://www.macports.org/install.php). Then, run ```sudo port install dmenu && sudo port uninstall dmenu``` to install dependencies
+- (it might look pointless to install dmenu and then uninstall it right away, but this way all dependencies are installed)
 ## My build of dmenu
 If you dont want to patch dmenu yourself, you can grab my already patched version of dmenu. <br>
 My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it: <br>

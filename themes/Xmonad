@@ -21,4 +21,4 @@ cp  -r ~/dmenu\ scripts/themes/.alacritty-else ~/.config/alacritty/
 
 echo 1 > /Users/itaysharir/dmenu\ scripts/themes/.current
 
-wal -i /Users/itaysharir/wallpapers/dt/0215.jpg
+wal -i /Users/itaysharir/wallpapers/new/japanese-happy.jpg
