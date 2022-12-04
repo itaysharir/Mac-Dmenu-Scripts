@@ -1,8 +1,0 @@
-#! /usr/bin/env sh
-
-cd ~/wallpapers/dt/
-export file=$(ls | shuf -n 1)
-wal -i $file
-echo $file >>~/dmenu\ scripts/wallpaper/.wallpaper_history
-sleep 0.2
-sudo yabai --load-sa

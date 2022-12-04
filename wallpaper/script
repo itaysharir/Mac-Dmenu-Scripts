@@ -1,4 +1,0 @@
-#! /usr/bin/env sh
-
-cd ~/dmenu\ scripts/wallpaper/options
-ls | dmenu -i -l 20 -p "What would you like to do?" | xargs -I {} sh "{}"
