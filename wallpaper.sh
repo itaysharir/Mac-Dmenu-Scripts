@@ -2,61 +2,65 @@
 
 export DMENU="dmenu -i -l 20 -p"
 
-### Options ###
+# function for choosing a spacific wallpaper
 choose () {
     export wall=$(cd ~/wallpapers/dt && feh --thumbnails --index-info '' --action 'printf "%%s\n" %F' "$PWD" * | rev | cut -c1- | rev)
     wal -i $wall
     echo $(cat ~/.cache/wal/wal) >> ~/dmenu\ scripts/.wallpaper_history
 }
 
+# function for choosing a random wallpaper
 random () {
     export file=$(ls ~/wallpapers/dt | shuf -n 1)
     wal -i ~/wallpapers/dt/$file
     echo $(cat ~/.cache/wal/wal) >> ~/dmenu\ scripts/.wallpaper_history
 }
 
+# funcion for applying the current wallpaper to your current rice
 apply () {
     export currentwall=$(osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)')
 
-    if [[ $(cat ~/dmenu\ scripts/themes/.current) == 1 ]]; then
-        sed -i '' -e '$ d' ~/dmenu\ scripts/themes/Xmonad
-        echo wal -i $currentwall >> ~/dmenu\ scripts/themes/Xmonad
+    if [[ $(cat ~/dmenu\ scripts/themes/current) == 1 ]]; then
+        echo $currentwall > ~/dmenu\ scripts/themes/wallpapers/dt-xmonad
     fi
 
-    if [[ $(cat ~/dmenu\ scripts/themes/.current) == 2 ]]; then
-        sed -i '' -e '$ d' ~/dmenu\ scripts/themes/Qtile
-        echo wal -i $currentwall >> ~/dmenu\ scripts/themes/Qtile
+    if [[ $(cat ~/dmenu\ scripts/themes/current) == 2 ]]; then
+        echo $currentwall > ~/dmenu\ scripts/themes/wallpapers/dt-qtile
     fi
 
-    if [[ $(cat ~/dmenu\ scripts/themes/.current) == 3 ]]; then
-        sed -i '' -e '$ d' ~/dmenu\ scripts/themes/qtile_reddit_rice
-        echo wal -i $currentwall >> ~/dmenu\ scripts/themes/qtile_reddit_rice
+    if [[ $(cat ~/dmenu\ scripts/themes/current) == 3 ]]; then
+        echo $currentwall > ~/dmenu\ scripts/themes/wallpapers/huh-qtile
     fi
 
-    if [[ $(cat ~/dmenu\ scripts/themes/.current) == 4 ]]; then
-        sed -i '' -e '$ d' ~/dmenu\ scripts/themes/Palenight
-        echo wal -i $currentwall >> ~/dmenu\ scripts/themes/Palenight
-
+    if [[ $(cat ~/dmenu\ scripts/themes/current) == 4 ]]; then
+        echo $currentwall > ~/dmenu\ scripts/themes/wallpapers/palenight
     fi
 }
 
+# a function to undo setting a wallpaper
 undo () {
     export lastwall=$(sed 'x;$!d' < ~/dmenu\ scripts/.wallpaper_history)
     wal -i $lastwall
 }
 
-### Confirm ###
+# a function to confirm setting the wallpaper
 confirm () {
-    choice=$(printf "Yes\nNo" | ${DMENU} "Do you like your new wallpaper?")
+    choice=$(printf "Yes\nNo\nNo, Give me another random wallpaper" | ${DMENU} "Do you like your new wallpaper?")
     if [[ $choice == "Yes" ]]; then
         exit
     fi
+
     if [[ $choice == "No" ]]; then
         undo
     fi
+
+    if [[ $choice == "No, Give me another random wallpaper" ]]; then
+        random
+        confirm
+    fi
 }
 
-### Main menu ###
+# list all options
 main () {
     choice=$(printf "Choose\nRandom\nApply\nUndo" | ${DMENU} "What would you like to do?")
 

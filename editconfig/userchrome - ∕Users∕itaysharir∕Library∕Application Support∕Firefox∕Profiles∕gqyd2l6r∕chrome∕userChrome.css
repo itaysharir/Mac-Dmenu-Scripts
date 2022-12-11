@@ -1,3 +1,0 @@
-#! /usr/bin/env sh
-
-emacsclient -c "~/Library/Application Support/Firefox/Profiles/gqyd2l6r.default-release/chrome/userChrome.css"
