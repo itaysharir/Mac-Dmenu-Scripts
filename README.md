@@ -14,9 +14,6 @@ To use the ```themes``` script, you need:
 To use the ```wallpaper``` script, you need:
 - pywal (fork) ```git clone https://github.com/robwaz/pywal && cd pywal && sudo pip3 install -e ./```
 
-To use the ```editconfig``` script, you need:
-- emacs | there are multiple ways to install emacs on macOS, look it up.
-
 ## Installation of dmenu scripts
 ### Clone this repository
 Clone this repo with the following command: <br>
