@@ -14,10 +14,10 @@ youtube - https://youtube.com/results?search_query=\\
 archive - https://web.archive.org/web/*/\\
 wikipedia - https://en.wikipedia.org/wiki/\
 "\
-| sed 's/\\//' | ${DMENU} "Search:") # pipe configs into dmenu
+| sed 's/\\//' | ${DMENU} "Search:") # pipe options into dmenu
 
 website=$(echo $choice | cut -d- -f1)
-final=$(cut -d "-" -f2- <<< "$choice") # store blank serch link to selected website in a variable
+final=$(echo $choice | cut -d "-" -f2-) # store blank serch link to selected website in a variable
 
 # check if choice is empty
 if [ -z "$choice" ]; then
