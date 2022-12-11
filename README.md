@@ -15,24 +15,24 @@ To use the ```wallpaper``` script, you need:
 To use the ```editconfig``` script, you need:
 - emacs | there are multiple ways to install emacs on macOS, look it up.
 
-### Add keyblindings
-- Install skhd - a tool that allows you to assign commands to keyblindings ```brew install koekeishiya/formulae/skhd``` <br>
-- Add the following to your skhd config:
-```
-
 ## Installation of dmenu scripts
 ### Clone this repository
 Clone this repo with the following command: <br>
 ```git clone https://github.com/itaysharir/Mac-Dmenu-Scripts.git ~/dmenu\ scripts```
+
+### Add keyblindings
+- Install skhd - a tool that allows you to assign commands to keyblindings ```brew install koekeishiya/formulae/skhd``` <br>
+- Add the following to your skhd config (loacted in ~/.config/skhd):
+```
 ### Various dmenu scripts ###
-cmd + shift - return : /bin/bash -l -c "sh ~/dmenu\ scripts/apps/script.sh"      # App launcher
-cmd + shift - t : /bin/bash -l -c "sh ~/dmenu\ scripts/themes/.script.sh"        # Bar changer
-cmd + shift - l : /bin/bash -l -c "sh ~/dmenu\ scripts/logout/.script.sh"        # Logout menu
-cmd + shift - r : /bin/bash -l -c "sh ~/dmenu\ scripts/screenshot/.script.sh"    # Screenshot menu
-cmd + shift - b : /bin/bash -l -c "sh ~/dmenu\ scripts/web/.script.sh"           # Search engine script
-cmd + shift - e : /bin/bash -l -c "sh ~/dmenu\ scripts/editconfig/.script.sh"    # Edit conigs
-cmd + shift - d : /bin/bash -l -c "sh ~/dmenu\ scripts/todo/.script.sh"          # Todo
-cmd + shift - m : /bin/bash -l -c "sh ~/dmenu\ scripts/wallpaper/.script.sh"     # Wallpaper
+cmd + shift - return : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/apps.sh"  # App launcher
+cmd + shift - t : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/themes.sh"     # Bar changer
+cmd + shift - l : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/logout.sh"     # Logout menu
+cmd + shift - r : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/screenshot.sh" # Screenshot menu
+cmd + shift - b : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/web.sh"        # Search engine script
+cmd + shift - e : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/editconfig.sh" # Edit conigs
+cmd + shift - d : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/todo.sh"       # Todo
+cmd + shift - m : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/wallpaper.sh"  # Wallpaper
 ```
 ### Install dependencies
 - First of all, the obvious - Xquartz. Make sure it;s installed, if not install it with ```brew install xquartz```
