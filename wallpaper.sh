@@ -4,7 +4,7 @@ export DMENU="dmenu -i -l 20 -p"
 
 # function for choosing a spacific wallpaper
 choose () {
-    export wall=$(cd ~/wallpapers/dt && feh --thumbnails --index-info '' --action 'printf "%%s\n" %F' "$PWD" * | rev | cut -c1- | rev)
+    wall=$(cd ~/wallpapers/dt && /opt/local/bin/sxiv -r -q -t -b -o *)
     wal -i $wall
     echo $(cat ~/.cache/wal/wal) >> ~/dmenu\ scripts/.wallpaper_history
 }
