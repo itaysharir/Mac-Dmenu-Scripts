@@ -1,3 +1,5 @@
+![Untitled](https://user-images.githubusercontent.com/87126382/206921619-dde09c26-d617-4de4-9f1e-a0fc2478ae9d.png)
+
 # Introduction
 I have an M1 mac which i bought about 2 years ago when i basically knew nothing about computers. I want to switch to Asahi linux but it is missing some important featuers. One program i wanted to use on linux was dmenu. So in the meanwhile until i wait for Asahi, Here is my collection of dmenu scrips.
 - Taken insporation from [distrotube's dmscripts](https://gitlab.com/dwt1/dmscripts)
