@@ -34,9 +34,13 @@ cmd + shift - d : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/todo.s
 cmd + shift - m : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/wallpaper.sh"  # Wallpaper
 ```
 ### Install dependencies
-- First of all, the obvious - Xquartz. Make sure it;s installed, if not install it with ```brew install xquartz```
+- First of all, the obvious - Xquartz. Make sure it's installed, if not install it with ```brew install xquartz```
 - Install macports following the instuctions [here](https://www.macports.org/install.php). Then, run ```sudo port install dmenu && sudo port uninstall dmenu``` to install dependencies
+- Reboot
 - (it might look pointless to install dmenu and then uninstall it right away, but this way all dependencies are installed)
+
+Hint: If you don't want to patch and build dmenu yourself, **obviously** dont uninstall dmenu after installing it.
+
 ## My build of dmenu
 If you dont want to patch dmenu yourself, you can grab my already patched version of dmenu. <br>
 My build of dmenu is the folder ```dmenu-4.9``` in the repo. To install it: <br>
