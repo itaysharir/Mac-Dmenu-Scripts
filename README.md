@@ -1,4 +1,4 @@
-![Untitled](https://user-images.githubusercontent.com/87126382/206921926-0f3c58aa-ddd0-40eb-85dd-7f4d63cf6c8c.png)
+![Untitled](https://user-images.githubusercontent.com/87126382/206922198-d19c2a77-2db9-4248-8735-033990541ab1.png)
 
 # Introduction
 I have an M1 mac which i bought about 2 years ago when i basically knew nothing about computers. I want to switch to Asahi linux but it is missing some important featuers. One program i wanted to use on linux was dmenu. So in the meanwhile until i wait for Asahi, Here is my collection of dmenu scrips.
