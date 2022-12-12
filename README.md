@@ -35,6 +35,7 @@ cmd + shift - e : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/editco
 cmd + shift - d : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/todo.sh"       # Todo
 cmd + shift - m : open -a Xquartz && /bin/bash -l -c "sh ~/dmenu\ scripts/wallpaper.sh"  # Wallpaper
 ```
+## Install dmenu
 ### Install dependencies
 - First of all, the obvious - Xquartz. Make sure it's installed, if not install it with ```brew install xquartz```
 - Install macports following the instuctions [here](https://www.macports.org/install.php). Then, run ```sudo port install dmenu && sudo port uninstall dmenu``` to install dependencies
