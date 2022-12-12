@@ -15,6 +15,7 @@ To use the ```themes``` script, you need:
 
 To use the ```wallpaper``` script, you need:
 - pywal (fork) ```git clone https://github.com/robwaz/pywal && cd pywal && sudo pip3 install -e ./```
+- sxiv (only needed to choose a spacific wallpaper) ```sudo port install sxiv```
 
 ## Installation of dmenu scripts
 ### Clone this repository
