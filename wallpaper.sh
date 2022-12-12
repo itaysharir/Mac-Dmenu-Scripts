@@ -4,8 +4,14 @@ export DMENU="dmenu -i -l 20 -p"
 
 # function for choosing a spacific wallpaper
 choose () {
-    wall=$(cd ~/wallpapers/dt && /opt/local/bin/sxiv -r -q -t -b -o *)
-    wal -i $wall
+    cd ~/wallpapers/dt/
+    wall=$(/opt/local/bin/sxiv -r -q -t -b -o *)
+
+    if [ -z "$wall" ]; then
+        exit
+    fi
+
+    wal -i "${wall}"
     echo $(cat ~/.cache/wal/wal) >> ~/dmenu\ scripts/.wallpaper_history
 }
 
@@ -66,6 +72,7 @@ main () {
 
     if [[ $choice == "Choose" ]]; then
         choose
+        confirm
     fi
 
     if [[ $choice == "Random" ]]; then

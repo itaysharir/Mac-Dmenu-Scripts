@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env sh
 
 file="$HOME/.todo"
 touch "$file"

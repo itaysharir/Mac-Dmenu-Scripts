@@ -14,14 +14,14 @@ huh-qtile\\
 # if choice is empty, DO NOT PROCEED
 if [ -z $choice ]; then
     exit
-else
+else # if choice is not empty, do the following:
     # remove current configs
     rm -r ~/.config/sketchybar  # sketchybar
     rm -r ~/.config/nvim/       # nvim
     rm -r ~/.config/alacritty/  # alacritty
     rm -r ~/.config/yabai/      # yabai
 
-    # if setups that need nvim with one dark colorscheme are selected, use that colorscheme
+    # if setups that need nvim with onedark colorscheme are selected, use that colorscheme
     if [ $choice == "dt-xmonad" ] || [ $choice == "dt-qtile" ] || [ $choice == "huh-qtile"]; then
     cp -r /Users/itaysharir/dmenu\ scripts/themes/nvim/nvim-onedark ~/.config/nvim
     fi
@@ -33,7 +33,7 @@ else
     # make sure yabai folder exists
     mkdir ~/.config/yabai
 
-    # move desired config to ~/.config
+    # move desired configs to ~/.config
     cp -r ~/dmenu\ scripts/themes/sketchybar/sketchybar-$choice ~/.config/sketchybar    # sketchybar
     cp -r ~/dmenu\ scripts/themes/yabai/yabai-$choice/yabairc ~/.config/yabai/yabairc   # yabai
     cp -r ~/dmenu\ scripts/themes/alacritty/alacritty-$choice ~/.config/alacritty       # alacritty
