@@ -24,5 +24,5 @@ if [ -z "$choice" ]; then
     exit # if it is, exit
 else
     search=$(cd | ${DMENU} "Enter search query for $website") # if not, ask the user for search query
-    open ${final}${search}                                    # and then search what the user typed on the wsbsite he selected
+    open ${final}"${search}"                                    # and then search what the user typed on the wsbsite he selected
 fi

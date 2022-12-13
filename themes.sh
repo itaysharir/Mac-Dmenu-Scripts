@@ -11,6 +11,15 @@ huh-qtile\\
 "\
 | sed 's/\\//' | ${DMENU} "Select theme:") # pipe options into dmenu
 
+backup=$(printf "Yes\nNo" | ${DMENU} "Backup existing configs?")
+
+if [ $backup == "Yes" ]; then
+    mv ~/.config/sketchybar ~/.config/sketchybar.old
+    mv ~/.config/nvim ~/.config/nvim.old
+    mv ~/.config/alacritty ~/.config/alacritty.old
+    mv ~/.config/yabai ~/.config/yabai.old
+fi
+
 # if choice is empty, DO NOT PROCEED
 if [ -z $choice ]; then
     exit
