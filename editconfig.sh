@@ -15,6 +15,7 @@ neovim - /Users/$(whoami)/.config/nvim/init.lua \\
 rofi - /Users/$(whoami)/.config/rofi/config.rasi \\
 sketchybar - /Users/$(whoami)/.config/sketchybar/sketchybarrc \\
 skhd - /Users/$(whoami)/.config/skhd/skhdrc \\
+yabai - /Users/$(whoami)/.config/yabai/yabairc \\
 starship - /Users/$(whoami)/.config/starship.toml \\
 tmux - /Users/$(whoami)/.tmux.conf \\
 zsh - /Users/$(whoami)/.zshrc \
