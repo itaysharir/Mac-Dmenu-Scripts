@@ -1,3 +1,8 @@
+# ⚠️ DO NOT use this, This repo is archived.
+# everything is still maintained in [my dotfiles repo](https://github.com/itaysharir/Dotfiles) ⚠️
+<br>
+<br>
+
 ![Untitled](https://user-images.githubusercontent.com/87126382/206922198-d19c2a77-2db9-4248-8735-033990541ab1.png)
 
 # Introduction
